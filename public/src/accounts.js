@@ -1,7 +1,16 @@
+const { findAuthorById } = require("./books");
 
-<<<<<<< 34b635edb46aae41dba2bd5f32d8697e9de44de4
 
-=======
+function findAccountById(accounts, id) {
+  return accounts.find(account => account.id === id);
+}
+
+
+function sortAccountsByLastName(accounts) {
+  return accounts.sort((accountA, accountB) => (accountA.name.last > accountB.name.last ? 1 : -1));
+}
+
+
 function findAccountById(accounts, id) {
   return accounts.find((account) => account.id.includes(id));
 }
@@ -11,7 +20,6 @@ function sortAccountsByLastName(accounts) {
     lastA.name.last.toLowerCase() > lastB.name.last.toLowerCase() ? 1 : -1
   );
 }
->>>>>>> fixed error
 
 function getTotalNumberOfBorrows(account, books) {
   
@@ -32,13 +40,10 @@ function getTotalNumberOfBorrows(account, books) {
 }
 
 function getBooksPossessedByAccount(account, books, authors) {
-  
+ 
+
   const borrowedBooks = [];
 
-<<<<<<< 34b635edb46aae41dba2bd5f32d8697e9de44de4
-function findAccountById(accounts, id) {
-  return accounts.find(account => account.id === id);
-=======
   books.forEach((book) => {
     let bookBorrows = book.borrows;
 
@@ -54,21 +59,13 @@ function findAccountById(accounts, id) {
   });
 
   return result;
->>>>>>> fixed error
 }
 
-function sortAccountsByLastName(accounts) {}
 
-<<<<<<< 34b635edb46aae41dba2bd5f32d8697e9de44de4
-function getTotalNumberOfBorrows(account, books) {}
-
-function getBooksPossessedByAccount(account, books, authors) {}
-=======
 function getAuthor(book, authors) {
   const author = authors.find((author) => author.id === book.authorId);
   return author;
 }
->>>>>>> fixed error
 
 module.exports = {
   findAccountById,
